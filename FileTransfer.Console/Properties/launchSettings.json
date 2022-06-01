@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FileTransfer.Console": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

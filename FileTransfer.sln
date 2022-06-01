@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31606.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransfer.Console", "FileTransfer.Console\FileTransfer.Console.csproj", "{88494CDA-DF97-41D2-9D9B-0A45DF41B4E5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4300D569-1918-439B-9766-BB31B8A80F24} = {4300D569-1918-439B-9766-BB31B8A80F24}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{BC856881-5BE1-427A-9C7D-C2DC4564C44D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{19DE6F2A-7774-4F60-B6F0-F5BC79D1A241}"
+	ProjectSection(SolutionItems) = preProject
+		BuildFileTransfer.yml = BuildFileTransfer.yml
+		.github\workflows\RunFileTransfer.yml = .github\workflows\RunFileTransfer.yml
+		SonarFileTransfer.yml = SonarFileTransfer.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BEA923B7-F7DE-4310-8AE3-462D20214918}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		FileTransfer.Console\Dockerfile = FileTransfer.Console\Dockerfile
+		README.markdown = README.markdown
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransfer.Xunit", "FileTransfer.Xunit\FileTransfer.Xunit.csproj", "{DA6E5DC0-CA05-429B-8555-373A2E29807E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4300D569-1918-439B-9766-BB31B8A80F24} = {4300D569-1918-439B-9766-BB31B8A80F24}
+		{5139ED80-8803-410F-BA0D-2B23E36A7CDE} = {5139ED80-8803-410F-BA0D-2B23E36A7CDE}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransfer.Persistence", "FileTransfer.Persistence\FileTransfer.Persistence.csproj", "{4300D569-1918-439B-9766-BB31B8A80F24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransfer.StringManipulation", "FileTransfer.StringManipulation\FileTransfer.StringManipulation.csproj", "{5139ED80-8803-410F-BA0D-2B23E36A7CDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88494CDA-DF97-41D2-9D9B-0A45DF41B4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88494CDA-DF97-41D2-9D9B-0A45DF41B4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88494CDA-DF97-41D2-9D9B-0A45DF41B4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88494CDA-DF97-41D2-9D9B-0A45DF41B4E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6E5DC0-CA05-429B-8555-373A2E29807E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6E5DC0-CA05-429B-8555-373A2E29807E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6E5DC0-CA05-429B-8555-373A2E29807E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6E5DC0-CA05-429B-8555-373A2E29807E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4300D569-1918-439B-9766-BB31B8A80F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4300D569-1918-439B-9766-BB31B8A80F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4300D569-1918-439B-9766-BB31B8A80F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4300D569-1918-439B-9766-BB31B8A80F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5139ED80-8803-410F-BA0D-2B23E36A7CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5139ED80-8803-410F-BA0D-2B23E36A7CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5139ED80-8803-410F-BA0D-2B23E36A7CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5139ED80-8803-410F-BA0D-2B23E36A7CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19DE6F2A-7774-4F60-B6F0-F5BC79D1A241} = {BC856881-5BE1-427A-9C7D-C2DC4564C44D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86864C46-F4B4-4821-89B3-DEFD96A3CAF5}
+	EndGlobalSection
+EndGlobal
