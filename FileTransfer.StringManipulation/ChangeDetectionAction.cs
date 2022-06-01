@@ -1,4 +1,7 @@
-﻿namespace FileTransfer.StringManipulation
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace FileTransfer.StringManipulation
 {
     public class ChangeDetectionAction
     {
@@ -9,7 +12,7 @@
             if (string.IsNullOrWhiteSpace(input))
                 return tokens;
 
-            string[] items = input.Split('|');
+            List<string> items = input.Split('|').ToList<string>();
 
             foreach(string item in items)
             {
