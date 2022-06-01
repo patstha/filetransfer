@@ -2,7 +2,7 @@
 
 namespace FileTransfer.Persistence
 {
-    public sealed class DataService: IDataService, System.IDisposable
+    public class DataService: IDataService, System.IDisposable
     {
         private readonly ILogger<DataService> _log;
         private readonly string _connectionString;
@@ -19,6 +19,16 @@ namespace FileTransfer.Persistence
 
         public void Disconnect() => _log.LogDebug($"TODO: Write code to disconnect from Connection String {_connectionString} here.");
 
-        public void Dispose() => Disconnect();
+        public void Dispose()
+        {
+            Dispose(true);
+            System.GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            // Cleanup
+            Disconnect();
+        }
     }
 }
