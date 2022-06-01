@@ -15,9 +15,9 @@ namespace FileTransfer.Persistence
             _connectionString = connectionString;
         }
 
-        public void Connect() => _log.LogInformation($"TODO: Write code to connect to Connection String {_connectionString}");
+        public void Connect() => _log.LogDebug($"TODO: Write code to {nameof(Connect)} to Connection String {_connectionString}");
 
-        public void Disconnect() => _log.LogDebug($"TODO: Write code to disconnect from Connection String {_connectionString} here.");
+        public void Disconnect() => _log.LogDebug($"TODO: Write code to {nameof(Disconnect)} from Connection String {_connectionString} here.");
 
         public void Dispose()
         {
