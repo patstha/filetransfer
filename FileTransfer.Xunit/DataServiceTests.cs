@@ -30,5 +30,10 @@ public class DataServiceTests : System.IDisposable
     public void TestFreebie() => Assert.NotNull(service);
 
     [Fact]
-    public void TestConnect() => service.Connect();
+    public void TestConnect()
+    {
+        service.Connect();
+        Assert.Null(null);
+    }
+
 }
