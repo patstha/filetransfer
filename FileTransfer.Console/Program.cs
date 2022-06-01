@@ -7,7 +7,7 @@ using Serilog;
 
 namespace FileTransfer.Console
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
