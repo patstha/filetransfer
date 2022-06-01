@@ -5,7 +5,7 @@ using Moq;
 using Xunit;
 
 namespace FileTransfer.Xunit;
-public class DataServiceTests : System.IDisposable
+public class DataServiceTests
 {
     DataService service;
     public DataServiceTests()
@@ -20,10 +20,6 @@ public class DataServiceTests : System.IDisposable
             .Build();
         var connectionString = configuration.GetValue<string>("ConnectionStrings:DefaultConnection");
         service = new(log, connectionString);
-    }
-    public void Dispose()
-    {
-        service.Dispose();
     }
 
     [Fact]
