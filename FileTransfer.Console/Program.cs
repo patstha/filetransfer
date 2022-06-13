@@ -35,7 +35,7 @@ namespace FileTransfer.Console
                 .ReadFrom.Configuration(builder.Build())
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
-                .WriteTo.File(@"C:\Users\khada\source\personal\FileTransfer\FileTransfer.Console\log.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.File(@"mylog.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             // Initiated the dependency injection container 
@@ -48,7 +48,7 @@ namespace FileTransfer.Console
                                     services.GetRequiredService<ILogger<DataService>>(),
                                     services
                                         .GetRequiredService<IConfiguration>()
-                                        .GetConnectionString("DefaultConnection"));
+                                        .GetConnectionString("Default"));
                             });
                         })
                         .UseSerilog()
