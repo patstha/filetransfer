@@ -16,6 +16,7 @@ namespace FileTransfer.Console
             var dataService = host.Services.GetRequiredService<IDataService>();
 
             dataService.Connect();
+            var persons = dataService.GetPersons();
         }
 
         static void ConfigSetup(IConfigurationBuilder builder)
