@@ -6,5 +6,6 @@ namespace FileTransfer.Persistence
     {
         void Connect();
         List<Person> GetPersons();
+        List<Person> GetPersonsDapper();
     }
 }

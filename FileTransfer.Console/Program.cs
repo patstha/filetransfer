@@ -17,6 +17,7 @@ namespace FileTransfer.Console
 
             dataService.Connect();
             var persons = dataService.GetPersons();
+            var dapperPersons = dataService.GetPersonsDapper();
         }
 
         static void ConfigSetup(IConfigurationBuilder builder)

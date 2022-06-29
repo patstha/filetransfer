@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Dapper;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Data;
 
@@ -48,6 +49,16 @@ namespace FileTransfer.Persistence
                         }
                     }
                 }
+            }
+            return persons;
+        }
+
+        public List<Person> GetPersonsDapper()
+        {
+            List<Person> persons = new();
+            using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString))
+            {
+                persons = connection.Query<Person>("select * from person").AsList();
             }
             return persons;
         }
