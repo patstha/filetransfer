@@ -5,7 +5,7 @@ using System.Data;
 
 namespace FileTransfer.Persistence
 {
-    public class DataService: IDataService, System.IDisposable
+    public class DataService : IDataService, System.IDisposable
     {
         private readonly ILogger<DataService> _log;
         private readonly string _connectionString;
@@ -61,6 +61,55 @@ namespace FileTransfer.Persistence
                 persons = connection.Query<Person>("select * from person").AsList();
             }
             return persons;
+        }
+
+        public void CreateStateLookupTable()
+        {
+            using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString))
+            {
+                string query = @"create table if not exists lookupstate 
+                                (
+                                    id serial primary key, 
+                                    name nvarchar(255) not null, 
+                                    capital nvarchar(255) not null
+                                )
+                                ;";
+                connection.Query(query);
+            }
+        }
+
+        public void DeleteStateLookupTable()
+        {
+            using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString))
+            {
+                string query = @"drop table if exists lookupstate;";
+                connection.Query(query);
+            }
+        }
+
+        public void InsertStateLookupTable()
+        {
+            using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString))
+            {
+                string query = @"insert into lookupstate
+                                (name, capital)
+                                values
+                                (""Alaska"", ""Anchorage""),
+                                (""Arkansas"", ""Little Rock"");
+                ; ";
+                connection.Query(query);
+            }
+        }
+
+        public List<LookupState> GetStateLookupTable()
+        {
+            List<LookupState> states = new();
+            using (var connection = new MySql.Data.MySqlClient.MySqlConnection(_connectionString))
+            {
+                string query = @"select * from lookupstate;";
+                states = connection.Query<LookupState>(query).AsList();
+            }
+            return states;
         }
 
         public void Disconnect() => _log.LogDebug($"TODO: Write code to {nameof(Disconnect)} from Connection String {_connectionString} here.");
